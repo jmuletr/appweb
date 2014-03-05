@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href='fullcalendar/fullcalendar.css' rel='stylesheet' />
+        <link href='fullcalendar/fullcalendar.print.css' rel='stylesheet' media='print' />
+        <script src='lib/jquery.min.js'></script>
+        <script src='lib/jquery-ui-min.js'></script>
+        <script src='fullcalendar/fullcalendar.min.js'></script>
+        <script src='fullcalendar/gcal.js'></script>
+        
+        <script>
+
+            $(document).ready(function() {
+
+                $('#calendar').fullCalendar({
+                    // US Holidays
+                    events: 'https://www.google.com/calendar/feeds/jmuletr%40gmail.com/public/basic',
+                    loading: function(bool) {
+                        if (bool) {
+                            $('#loading').show();
+                        } else {
+                            $('#loading').hide();
+                        }
+                    },
+                    
+                    
+                    eventClick: function(calEvent) {
+                        var eventTime = $.fullCalendar.formatDate(calEvent.start, "dddd, MMMM yyyy  h:sstt");
+                        var info = 'Nom: ' + calEvent.title + '  Comença el:' + eventTime + '  Descripcio:' + calEvent.description;
+                        //window.open('#popupBasic','_self');
+                        alert (info);
+                        return false;
+                    },
+                    
+
+                });
+
+            });
+
+        </script>
+        <style>
+
+            body {
+                margin-top: 40px;
+                text-align: center;
+                font-size: 12px;
+                font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+            }
+
+            #loading {
+                position: absolute;
+                top: 5px;
+                right: 5px;
+            }
+
+            #calendar {
+                width: 220px;
+                height: 100%;
+                margin: 0 auto;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id='loading' style='display:none'>loading...</div>
+        <div id='calendar'></div>
+        <br>
+        <p>Per veure informacio detallada d'un event concret anar a la vista d'agenda.</p>
+    </body>
+</html>
