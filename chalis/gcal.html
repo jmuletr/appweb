@@ -26,7 +26,7 @@
                     
                     eventClick: function(calEvent) {
                         var eventTime = $.fullCalendar.formatDate(calEvent.start, "dddd, MMMM yyyy  h:sstt");
-                        var info = 'Nom: ' + calEvent.title + '  Comença el:' + eventTime + '  Descripcio:' + calEvent.description;
+                        var info = 'Nombre: ' + calEvent.title + '  Empieza el: ' + eventTime +'  Lugar: ' + calEvent.location + '  Descripcion: ' + calEvent.description;
                         //window.open('#popupBasic','_self');
                         alert (info);
                         return false;
@@ -62,9 +62,9 @@
         </style>
     </head>
     <body>
-        <div id='loading' style='display:none'>loading...</div>
+        <div id='loading' style='display:none'>Cargando...</div>
         <div id='calendar'></div>
         <br>
-        <p>Per veure informacio detallada d'un event concret anar a la vista d'agenda.</p>
+        <p>Pulsa sobre el evento a consultar.</p>
     </body>
 </html>
