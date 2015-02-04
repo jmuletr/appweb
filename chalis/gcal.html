@@ -25,7 +25,7 @@
                     
                     
                     eventClick: function(calEvent) {
-                        var eventTime = $.fullCalendar.formatDate(calEvent.start, "dddd, MMMM yyyy  h:sstt");
+                        var eventTime = $.fullCalendar.formatDate(calEvent.start, "dddd d, MMMM, yyyy  H:m");
                         var info = 'Nombre: ' + calEvent.title + '  Empieza el: ' + eventTime +'  Lugar: ' + calEvent.location + '  Descripcion: ' + calEvent.description;
                         //window.open('#popupBasic','_self');
                         alert (info);
