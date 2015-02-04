@@ -34,7 +34,7 @@ body{
 
 
 .page-header{
-	background-image:url("../images/misc/caution.png");
+	background-color: #2C3E50;
         background-repeat: repeat-x;
         
 	height:60px;
