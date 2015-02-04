@@ -11,10 +11,10 @@
         <script>
 
             $(document).ready(function() {
-
+				$('#calendar').fullCalendar('option', 'contentHeight', 26);
                 $('#calendar').fullCalendar({
                     // US Holidays
-                    events: 'https://www.google.com/calendar/feeds/terrarotja%40hotmail.com/public/basic',
+                    events: 'https://www.googleapis.com/calendar/v3/calendars/terrarotja@hotmail.com/events?key=AIzaSyDZmjAFnjDLdmWML_Fa7gbIYKa8RXLjE-k',
                     loading: function(bool) {
                         if (bool) {
                             $('#loading').show();
@@ -54,7 +54,7 @@
             }
 
             #calendar {
-                width: 220px;
+                width: auto;
                 height: 100%;
                 margin: 0 auto;
             }
